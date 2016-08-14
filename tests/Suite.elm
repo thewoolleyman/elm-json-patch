@@ -4,8 +4,8 @@ import Test exposing (concat)
 import Test.Runner.Log
 import Html.App
 import Html
+import Test.JsonPatchTest exposing (reverser)
 
-import Test.JsonPatchTest exposing (..)
 
 suite : Program Never
 suite =
@@ -14,8 +14,8 @@ suite =
         , update = \_ _ -> ()
         , view = \() -> Html.text "Check the console for useful output!"
         }
-        |> Test.Runner.Log.run (Test.concat
-          [
-            reverser
-          ]
-          )
+        |> Test.Runner.Log.run
+            (Test.concat
+                [ reverser
+                ]
+            )
