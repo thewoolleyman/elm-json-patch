@@ -1,4 +1,4 @@
-module Test.JsonPatchTest exposing (..)
+module Test.ReverserTest exposing (..)
 
 import Test exposing (..)
 import Expect

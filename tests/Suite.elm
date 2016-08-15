@@ -4,7 +4,7 @@ import Test exposing (concat)
 import Test.Runner.Log
 import Html.App
 import Html
-import Test.JsonPatchTest exposing (reverser)
+import Test.ReverserTest exposing (reverser)
 
 
 main : Program Never
