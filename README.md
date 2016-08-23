@@ -1,6 +1,9 @@
 # elm-json-patch
 
-Elm package to handle [JSON Patch](http://jsonpatch.com/) [RFC 6902](https://tools.ietf.org/html/rfc6902) format
+Elm package to handle [JSON Patch](http://jsonpatch.com/) [RFC 6902](https://tools.ietf.org/html/rfc6902) format.
+
+Like [https://github.com/zaim/immpatch](https://github.com/zaim/immpatch), but to apply port-incoming
+JSON Patches to Elm record structures.
 
 Running tests:
 
