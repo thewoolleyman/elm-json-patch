@@ -4,16 +4,6 @@ import Html.App as Html
 import Html exposing (..)
 
 
---init =
---    ( initialModel, todoListChanges [] )
---update msg model =
---    let
---        model =
---            TodoStore.update msg model
---    in
---        ( model, todoListChanges model.todos )
-
-
 main : Program Never
 main =
     Html.program
@@ -73,9 +63,9 @@ port displayModel : String -> Cmd msg
 
 
 
--- VIEW
+-- VIEW (We use the worker() function in the intetration-test-port-harness.js, so the view is an unused no-op)
 
 
 view : Model -> Html Msg
-view model =
-    div [] [ text model ]
+view _ =
+    div [] []

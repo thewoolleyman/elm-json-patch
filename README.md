@@ -1,3 +1,13 @@
 # elm-json-patch
 
 Elm package to handle [JSON Patch](http://jsonpatch.com/) [RFC 6902](https://tools.ietf.org/html/rfc6902) format
+
+Running tests:
+
+* `brew install watch`
+* Unit tests: 
+  * `watch tests/run-unit-tests`
+* Integration test (TODO: how to automate port-based tests with native JS?):
+  * `watch tests/run-integration-test` (actually just compiles)
+  * `open tests/integration-test.html` (reloads page every five seconds)
+  
