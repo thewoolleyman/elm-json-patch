@@ -10,4 +10,6 @@ Running tests:
 * Integration test (TODO: how to automate port-based tests with native JS?):
   * `watch tests/run-integration-test` (actually just compiles)
   * `open tests/integration-test.html` (reloads page every five seconds)
+  * `tests/clean` (if you have compilation or other problems)
+  * Clear browser cache and hard-reload if you still have problems
   
