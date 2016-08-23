@@ -78,20 +78,20 @@ update msg model =
     case msg of
         Receive patch ->
             let
-                firstOperation =
-                    case List.head patch of
-                        -- TODO: How to raise error
-                        Nothing ->
-                            { op = "", path = "", value = -42 }
-
-                        Just value ->
-                            value
+                newModel =
+                    processPatch patch model
             in
-                let
-                    newModel =
-                        { a = [ firstOperation.value ] }
-                in
-                    ( newModel, displayModel newModel )
+                ( newModel, displayModel newModel )
+
+
+processPatch : Patch -> Model -> Model
+processPatch patch model =
+    List.foldr applyOperation model patch
+
+
+applyOperation : Operation -> Model -> Model
+applyOperation operation model =
+    { a = [ operation.value ] }
 
 
 port receivePatch : (List Operation -> msg) -> Sub msg
