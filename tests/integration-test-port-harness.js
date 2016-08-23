@@ -1,14 +1,20 @@
 const ports = Elm.Test.Integration.PortParserTest.worker().ports;
 
 const expected = "This is a JSON patch";
-var $expected = document.getElementById('expected');
+const $expected = document.getElementById('expected');
 $expected.innerText = JSON.stringify(expected);
 
 ports.displayModel.subscribe(function(model) {
-  var $model = document.getElementById('model');
+  const $model = document.getElementById('model');
   $model.innerText = JSON.stringify(model);
-  var $result = document.getElementById('result');
-  $result.innerText = (expected == model);
+  const $body = document.getElementsByTagName('body')[0];
+  const $result = document.getElementById('result');
+  if (expected == model) {
+    $result.innerText = (expected == model);
+    $body.style = 'background-color: lightgreen';
+  } else {
+    $body.style = 'background-color: red';
+  }
 });
 
 setTimeout(function () {
