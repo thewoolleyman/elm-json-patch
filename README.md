@@ -1,5 +1,13 @@
 # elm-json-patch
 
+***UPDATE: Abandoned this, because it's not possible in Elm to arbitrarily
+map strings (as you'd get in JSON Patch paths) to fields
+in nested Elm records.  For more details see
+https://lexi-lambda.github.io/blog/2015/11/06/functionally-updating-record-types-in-elm/
+including my comments/links at the bottom***
+
+----
+
 Elm package to handle [JSON Patch](http://jsonpatch.com/) [RFC 6902](https://tools.ietf.org/html/rfc6902) format.
 
 Like [https://github.com/zaim/immpatch](https://github.com/zaim/immpatch), but to apply port-incoming
