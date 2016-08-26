@@ -2,6 +2,7 @@ port module Test.Integration.PortParserTest exposing (..)
 
 import Html.App as Html
 import Html exposing (..)
+import JsonPatch.Types exposing (..)
 
 
 main : Program Never
@@ -31,29 +32,6 @@ type alias Model =
 --    }
 
 
-type alias Op =
-    String
-
-
-type alias Path =
-    String
-
-
-type alias Value =
-    Int
-
-
-type alias Operation =
-    { op : Op
-    , path : Path
-    , value : Value
-    }
-
-
-type alias Patch =
-    List Operation
-
-
 initialState : Model
 initialState =
     { a = []
@@ -79,13 +57,13 @@ update msg model =
         Receive patch ->
             let
                 newModel =
-                    processPatch patch model
+                    applyPatch patch model
             in
                 ( newModel, displayModel newModel )
 
 
-processPatch : Patch -> Model -> Model
-processPatch patch model =
+applyPatch : Patch -> Model -> Model
+applyPatch patch model =
     List.foldr applyOperation model patch
 
 
